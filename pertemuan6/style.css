@@ -1,0 +1,7 @@
+.navbar {
+    background: linear-gradient(to right, #1FA2FF 0%, #12D8FA 51%, #1FA2FF 100%);
+}
+
+.navbar:hover {
+    background-position: right center;
+}
