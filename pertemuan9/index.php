@@ -13,16 +13,16 @@ class Book{
     public function getQtyCode(){
         if (preg_match("/^[A-Z]{2}[0-9]{2}$/", $this->kodeBuku)){
             if($this->qty < 1){
-                return "ERROR : Buku tidak tersedia/Stok habis";
+                return "Buku tidak tersedia";
             }
             else{
             return $this->kodeBuku . "-" . $this->nama . "-" . $this->qty .
-            " <br><br> Buku dengan Judul '$this->nama' dengan kode $this->kodeBuku tersedia $this->qty di stok."; 
+            " <br><br> Buku  '$this->nama' kode $this->kodeBuku tersedia $this->qty di stok."; 
             }
         }
         
         else{
-            return "ERROR : Kode Buku Salah";
+            return "Kode buku salah";
         }
     }
 
@@ -36,6 +36,6 @@ class Book{
 }
 
 $book_one = new Book();
-$book_one->setQtyCode('BB26', 'Bumi', 55);
+$book_one->setQtyCode('A001', 'Naruto', 14);
 
 echo $book_one->getQtyCode();
