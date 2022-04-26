@@ -1,23 +1,23 @@
 <?php
 class Book{
-    private $code_book;
+    private $kodeBuku;
     private $qty;
-    private $name;
+    private $nama;
 
-    public function setQtyCode($code_book, $name, $qty){
-        $this->code_book = $code_book;
-        $this->name = $name;
+    public function setQtyCode($kodeBuku, $nama, $qty){
+        $this->kodeBuku = $kodeBuku;
+        $this->nama = $nama;
         $this->qty = $qty;
     }
 
     public function getQtyCode(){
-        if (preg_match("/^[A-Z]{2}[0-9]{2}$/", $this->code_book)){
+        if (preg_match("/^[A-Z]{2}[0-9]{2}$/", $this->kodeBuku)){
             if($this->qty < 1){
                 return "ERROR : Buku tidak tersedia/Stok habis";
             }
             else{
-            return $this->code_book . "-" . $this->name . "-" . $this->qty .
-            " <br><br> Buku dengan Judul '$this->name' dengan kode $this->code_book tersedia $this->qty di stok."; 
+            return $this->kodeBuku . "-" . $this->nama . "-" . $this->qty .
+            " <br><br> Buku dengan Judul '$this->nama' dengan kode $this->kodeBuku tersedia $this->qty di stok."; 
             }
         }
         
@@ -31,7 +31,7 @@ class Book{
     }
 
     public function getCode(){
-        return $this->code_book;
+        return $this->kodeBuku;
     }
 }
 
